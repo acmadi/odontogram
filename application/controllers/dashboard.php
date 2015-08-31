@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Dashboard extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -26,36 +26,9 @@ class Welcome extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['title'] = 'REKAM MEDIS GIGI';
-		$this->load->view('index', $data);
-	}
-	public function login()
-	{
-		# code...
-		$id = $this->input->post('id');
-		$password = md5($this->input->post('password'));
-		$akses = 'admin';
-		$data = array(
-			'id_'.$akses => $id,
-			'password_'.$akses => $password
-			);
-		$this->load->model('m_main');
-		$result = $this->m_main->select_where($akses, $data);
-		if(!empty($result)){
-			$session = array(
-				'akses' => $akses,
-			);
-		}
-		echo $session['akses'];
-
-	}
-
-	public function dashboard()
-	{
-		# code...
 		$data['title'] = "Dashboard";
 		$this->load->view('dashboard/header', $data);
 		$this->load->view('dashboard');
 		$this->load->view('dashboard/footer');
-	}
+	}	
 }
