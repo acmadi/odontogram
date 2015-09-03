@@ -90,4 +90,14 @@ class Pasien extends CI_Controller {
 		$this->m_main->update('dokter',$data, $where);
 		$this->index();
 	}
+	public function record($id_pasien){
+		$this->load->model('m_main');
+		$rekam_pasien = $this->m_main->select_where('rekam_pasien', array('id_pasien' => $id_pasien));
+		if(!empty($rekam_pasien)){
+
+		}
+		else{
+			redirect(base_url()."index.php/rekam/tambah/".$id_pasien);
+		}
+	}
 }
