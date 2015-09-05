@@ -53,7 +53,7 @@
                                         <td><?php echo $row->ktp_pasien;?></td>
                                         <td><?php echo $row->alamat_rumah_pasien;?></td>
                                         <td><?php echo $row->ponsel_pasien;?></td>
-                                        <td><a href="<?php echo base_url();?>index.php/pasien/record/<?php echo $row->id_pasien;?>" class="btn btn-sm btn-warning">Record</a></td>
+                                        <td><a href="<?php echo base_url();?>index.php/rekam/record/<?php echo $row->id_pasien;?>" class="btn btn-sm btn-warning">Record</a></td>
                                     </tr>
                                     <?php
                                     }

@@ -68,7 +68,17 @@ class Pasien extends CI_Controller {
 			'alamat_rumah_pasien' => $this->input->post('alamat_rumah_pasien'),
 			'telepon_rumah_pasien' => $this->input->post('telepon_rumah_pasien'),
 			'alamat_kantor_pasien' => $this->input->post('alamat_kantor_pasien'),
-			'ponsel_pasien' => $this->input->post('ponsel_pasien')
+			'ponsel_pasien' => $this->input->post('ponsel_pasien'),
+			'GD' =>$this->input->post('GD'),
+			'PJ' =>$this->input->post('PJ'),
+			'DS' =>$this->input->post('DS'),
+			'HA' =>$this->input->post('HA'),
+			'HS' =>$this->input->post('HS'),
+			'GG' =>$this->input->post('GG'),
+			'AO' =>$this->input->post('AO'),
+			'AOtext' =>$this->input->post('AOtext'),
+			'AM' =>$this->input->post('AM'),
+			'AMtext' =>$this->input->post('AMtext'),
 		);
 
 		$this->m_main->insert($table, $data);
@@ -97,7 +107,7 @@ class Pasien extends CI_Controller {
 
 		}
 		else{
-			redirect(base_url()."index.php/rekam/tambah/".$id_pasien);
+			redirect(base_url()."index.php/rekam/record/".$id_pasien);
 		}
 	}
 }

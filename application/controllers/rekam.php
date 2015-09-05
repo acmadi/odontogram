@@ -26,17 +26,35 @@ class Rekam extends CI_Controller {
 	}
 	public function index()
 	{
-
+		redirect(base_url()."index.php/pasien");
 	}
-	public function tambah($id_pasien, $notif = 'not_found')
+	public function tambah($id_pasien)
 	{
-		$data['title'] = "Pasien";
 		$this->load->model('m_main');
-		$data['pasien'] = $this->m_main->getall('pasien');
+		$data['lib_gigi'] = $this->m_main->getall('lib_gigi');
+		$data['title'] = 'Tambah Rekam Gigi';
+		$data['id_pasien'] = $id_pasien;
+		
+		$data['id_rekam'] = $this->m_main->get_id('rekam_pasien', 'id_rekam');
+		$id_rekam = $data['id_rekam'][0];
+		$data['id_rekam'] = $id_rekam->id_rekam;
+		$data['id_rekam'] = $data['id_rekam']+1;
+		
 		$this->load->view('dashboard/header', $data);
-		$this->load->view('rekam/add', array("notif" => $notif));
+		$this->load->view('rekam/add', $data);
 		$this->load->view('dashboard/footer');
 	}
+
+	public function record($id_pasien){
+		$data['title'] = "Rekam Pasien";
+		$this->load->model('m_main');
+		$data['rekam_pasien'] = $this->m_main->select_where('rekam_pasien', array('id_pasien' => $id_pasien));
+		$data['id_pasien'] = $id_pasien;
+		$this->load->view('dashboard/header', $data);
+		$this->load->view('rekam/record', $data);
+		$this->load->view('dashboard/footer');
+	}
+
 	public function ubah($id)
 	{
 		
@@ -45,7 +63,8 @@ class Rekam extends CI_Controller {
 	{
 		
 	}
-	public function record($id_pasien){
 
+	public function add_kondisi_gigi(){
+		$this->load->model('m_main');
 	}
 }

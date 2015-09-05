@@ -23,4 +23,11 @@ class M_main extends CI_Model {
 	public function update($tablename, $content, $where){
 		$this->db->update($tablename, $content, $where);
 	}
+
+	public function get_id($tablename, $id_table){
+		$this->db->from($tablename);
+		$this->db->order_by($id_table, "desc");
+		$query = $this->db->get();
+		return $query->result();
+	}
 }
