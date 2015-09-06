@@ -25,9 +25,7 @@ class M_main extends CI_Model {
 	}
 
 	public function get_id($tablename, $id_table){
-		$this->db->from($tablename);
-		$this->db->order_by($id_table, "desc");
-		$query = $this->db->get();
-		return $query->result();
+		$hasil_query = $this->db->query("select * from $tablename ORDER BY $id_table DESC LIMIT 1");
+		return $hasil_query->result();
 	}
 }

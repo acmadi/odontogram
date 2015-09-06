@@ -48,7 +48,8 @@
                                             <div class="panel-heading">
                                                 Form Tambah Rekaman Gigi</div>
                                             <div class="panel-body pan">
-                                                <form action="<?php echo base_url();?>index.php/pasien/add" method="post" id="myForm">
+                                                <form action="<?php echo base_url();?>index.php/rekam/simpan_rekaman_gigi" method="post" id="myForm">
+                                                    <input type="text" hidden value="<?php echo $id_rekam?>" placeholder="" name="id_rekam">
                                                     <div class="form-body pal">
                                                         <div class="row" id="rekam_1">
                                                             <div class="row col-lg-12">
@@ -58,21 +59,21 @@
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="11">11 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="12">12 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="13">13 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="14">14 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="15">15 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="16">16 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="17">17 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="18">18 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="14">14 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="15">15 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="16">16 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="17">17 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="18">18 </div>
                                                                         </div>
                                                                         <div class="col-lg-6 col-offset-6">
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="21">21 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="22">22 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="23">23 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="24">24 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="25">25 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="26">26 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="27">27 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="28">28 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="24">24 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="25">25 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="26">26 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="27">27 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="28">28 </div>
                                                                         </div>
                                                                     </div>
                                                                     <br>
@@ -81,15 +82,15 @@
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="51">51 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="52">52 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="53">53 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="54">54 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="55">55 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="54">54 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="55">55 </div>
                                                                         </div>
                                                                         <div class="col-lg-6 col-offset-6">
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="61">61 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="62">62 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="63">63 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="64">64 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="65">65 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="64">64 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="65">65 </div>
                                                                         </div>
                                                                     </div>
                                                                     <br>
@@ -98,15 +99,15 @@
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="81">81 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="82">82 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="83">83 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="84">84 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="85">85 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="84">84 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="85">85 </div>
                                                                         </div>
                                                                         <div class="col-lg-6 col-offset-6">
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="71">71 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="72">72 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="73">73 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="74">74 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="75">75 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="74">74 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="75">75 </div>
                                                                         </div>
                                                                     </div>
                                                                     <br>
@@ -115,30 +116,87 @@
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="41">41 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="42">42 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:right" data-toggle="modal" id="43">43 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="44">44 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="45">45 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="46">46 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="47">47 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="48">48 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="44">44 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="45">45 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="46">46 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="47">47 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:right" data-toggle="modal" id="48">48 </div>
                                                                         </div>
                                                                         <div class="col-lg-6 col-offset-6">
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="31">31 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="32">32 </div>
                                                                             <div class="col-xs-1 btn btn-warning btn-lg gigi_lancip gigi" style="text-align:center;float:left" data-toggle="modal" id="33">33 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="34">34 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="35">35 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="36">36 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="37">37 </div>
-                                                                            <div class="col-xs-1 btn btn-primary btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="38">38 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="34">34 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="35">35 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="36">36 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="37">37 </div>
+                                                                            <div class="col-xs-1 btn btn-danger btn-lg gigi_kotak gigi" style="text-align:center;float:left" data-toggle="modal" id="38">38 </div>
                                                                         </div>
                                                                     </div>
                                                                 <!-- End Odontogram -->
                                                             </div>
                                                         </div>
+                                                        <div class="row" id="rekam_2" style="display: none">
+                                                            <div class="form-group">
+                                                                <label for="oclusi">Oclusi</label>
+                                                                <select class="form-control" id="oclusi" name="oclusi" required>
+                                                                    <option value="normal"> Normal Bite </option>
+                                                                    <option value="cross"> Cross Bite </option>
+                                                                    <option value="steep"> Steep Bite </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="mandibula">Torus Mandibularis</label>
+                                                                <select class="form-control" id="mandibula" name="mandibula" required>
+                                                                    <option value="none"> Tidak Ada </option>
+                                                                    <option value="kiri"> Sisi Kiri </option>
+                                                                    <option value="kanan"> Sisi Kanan </option>
+                                                                    <option value="both"> Kedua Sisi </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="diastema">Diastema</label>
+                                                                <select class="form-control" id="diastema" name="diastema" required>
+                                                                    <option value="none"> Tidak Ada </option>
+                                                                    <option value="ada"> Ada </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="palatinus">Torus Palatinus</label>
+                                                                <select class="form-control" id="palatinus" name="palatinus" required>
+                                                                    <option value="none"> Tidak Ada </option>
+                                                                    <option value="kecil"> Kecil </option>
+                                                                    <option value="sedang"> Sedang </option>
+                                                                    <option value="besar"> Besar </option>
+                                                                    <option value="mulitple"> Mulitple </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="palatum">Palatum</label>
+                                                                <select class="form-control" id="palatum" name="palatum" required>
+                                                                    <option value="dalam"> Dalam </option>
+                                                                    <option value="sedang"> Sedang </option>
+                                                                    <option value="rendah"> Rendah </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="anomali">Gigi Anomali</label>
+                                                                <select class="form-control" id="anomali" name="anomali" required>
+                                                                    <option value="none"> Tidak Ada </option>
+                                                                    <option value="ada"> Ada </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa fa-medkit"></i>
+                                                                    <input id="lain_lain" type="text" placeholder="Lain-Lain" class="form-control" name="lain_lain"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="form-actions text-right pal">
                                                         <button type="button" class="btn btn-primary" id="next">
-                                                            Simpan</button>
+                                                            Selanjutnya</button>
                                                         <button type="submit" class="btn btn-primary" id="submit" style="display: none">
                                                             Kirim</button>
                                                     </div>
@@ -156,6 +214,9 @@
                                                         <div class="panel-body pan" id="detail_odontogram">
                                                             <form action="<?php echo base_url();?>index.php/pasien/add" method="post">
                                                                 <div class="form-body pal">
+                                                                    <div class="alert alert-warning">
+                                                                        Pilih salah satu gigi di samping!
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-actions text-right pal">
                                                                     <button type="submit" class="btn btn-primary" id="detail_submit" style="display: none">
@@ -202,7 +263,6 @@
                 $('.gigi').css({"padding-left":"0px", "padding-right":"0px",});
             });
             $(".gigi").click(function(){
-                //$("#detail_odontogram").load("<?php echo base_url()?>index.php/ajaxcontroller/get_detail_odon/"+$(this).attr("id"));
                 var selected_gigi = $(this).attr("id")
                 $.post("<?php echo base_url()?>index.php/ajaxcontroller/get_detail_odon",
                 {
@@ -213,9 +273,15 @@
                 function(data,status){
                     if (status == 'success'){
                         $("#detail_odontogram").html(data);
-                        $("#detail_submit").show();
+                        $("#detail_submit").fadeIn();
                         $("#detail_title").html("Form Detail Gigi No: "+selected_gigi);
                     }
                 });
+            });
+            $("#next").click(function(){
+                $("#next").hide();
+                $("#submit").fadeIn();
+                $("#rekam_1").fadeOut();
+                $("#rekam_2").fadeIn();
             });
             </script>

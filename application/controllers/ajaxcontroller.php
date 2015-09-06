@@ -27,6 +27,6 @@ class AjaxController extends CI_Controller {
 		$this->load->view("rekam/detail_odon", $data);
 	}
 	public function save_detail_odon(){
-
+		
 	}
 }
