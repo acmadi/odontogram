@@ -23,10 +23,15 @@ class AjaxController extends CI_Controller {
 		$data['bahan_restorasi'] = $data['bahan_restorasi'];
 		$data['restorasi'] = $data['restorasi'];
 		$data['protesa'] = $data['protesa'];
-
+		
 		$this->load->view("rekam/detail_odon", $data);
 	}
-	public function save_detail_odon(){
-		
+	public function get_detail_rekam(){
+		$this->load->model('m_main');
+		$select_gigi = array(
+			'id_rekam' => substr($_POST['id_rekam'], 7),
+			);
+		$data['res_gigi'] = $this->m_main->select_where('gigi', $select_gigi);
+		$this->load->view("pasien/detail_rekam", $data);
 	}
 }
