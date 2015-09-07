@@ -140,6 +140,7 @@ class Pasien extends CI_Controller {
 		foreach ($rekam_gigi as $key) {
 			$this->m_main->delete('gigi', array('id_rekam' => $key['id_rekam']));
 		}
+		$this->m_main->delete('pasien', array('id_pasien'=>$id_pasien));
 		redirect(base_url()."index.php/pasien");
 	}
 }
