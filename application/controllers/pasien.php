@@ -26,6 +26,10 @@ class Pasien extends CI_Controller {
 	}
 	public function index()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data['title'] = "Pasien";
 		$this->load->model('m_main');
 		$data['pasien'] = $this->m_main->getall('pasien');
@@ -35,6 +39,10 @@ class Pasien extends CI_Controller {
 	}
 	public function tambah()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data['title'] = "Pasien - New";
 		$this->load->view('dashboard/header', $data);
 		$this->load->view('pasien/add');
@@ -42,6 +50,10 @@ class Pasien extends CI_Controller {
 	}
 	public function ubah($id)
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$where = array(
 			'id_dokter' => $id
@@ -54,7 +66,10 @@ class Pasien extends CI_Controller {
 	}
 	public function add()
 	{
-		# code...
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$table = 'pasien';
 		$data = array(
@@ -86,6 +101,10 @@ class Pasien extends CI_Controller {
 	}
 	public function update()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data = array(
 			'nama_dokter' => $this->input->post('nama_dokter'),
 			'alamat_dokter' => $this->input->post('alamat_dokter'),
@@ -100,7 +119,12 @@ class Pasien extends CI_Controller {
 		$this->m_main->update('dokter',$data, $where);
 		$this->index();
 	}
-	public function record($id_pasien){
+	public function record($id_pasien)
+	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$rekam_pasien = $this->m_main->select_where('rekam_pasien', array('id_pasien' => $id_pasien));
 		if(!empty($rekam_pasien)){

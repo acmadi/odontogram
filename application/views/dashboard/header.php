@@ -24,6 +24,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>assets/styles/jquery.news-ticker.css">
 </head>
 <body>
+    <?php if($akses != ('dokter' || 'admin')) redirect('index.php/welcome');?>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -37,9 +38,9 @@
                 </div>
                 <div class="topbar-main">
                     <ul class="nav navbar navbar-top-links navbar-right mbn">
-                        <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/48.jpg" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Robert John</span>&nbsp;<span class="caret"></span></a>
+                        <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/48.jpg" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs"><?php echo $nama;?></span>&nbsp;<span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-user pull-right">
-                                <li><a href="Login.html"><i class="fa fa-key"></i>Log Out</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/welcome/logout"><i class="fa fa-key"></i>Log Out</a></li>
                             </ul>
                         </li>
                     </ul>
