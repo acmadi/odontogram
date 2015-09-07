@@ -26,6 +26,10 @@ class Dokter extends CI_Controller {
 	}
 	public function index()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data['title'] = "Dokter";
 		$this->load->model('m_main');
 		$data['dokter'] = $this->m_main->getall('dokter');
@@ -35,6 +39,10 @@ class Dokter extends CI_Controller {
 	}
 	public function tambah()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data['title'] = "Dokter - New";
 		$this->load->view('dashboard/header', $data);
 		$this->load->view('dokter/add');
@@ -42,7 +50,11 @@ class Dokter extends CI_Controller {
 	}
 	public function ubah($id)
 	{
-		$this->load->model('m_main');
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
+        $this->load->model('m_main');
 		$where = array(
 			'id_dokter' => $id
 		);
@@ -55,6 +67,10 @@ class Dokter extends CI_Controller {
 	public function add()
 	{
 		# code...
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$table = 'dokter';
 		$data = array(
@@ -71,6 +87,10 @@ class Dokter extends CI_Controller {
 	}
 	public function update()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data = array(
 			'nama_dokter' => $this->input->post('nama_dokter'),
 			'alamat_dokter' => $this->input->post('alamat_dokter'),

@@ -34,6 +34,30 @@ class Welcome extends CI_Controller {
 		# code...
 		$id = $this->input->post('id');
 		$password = md5($this->input->post('password'));
+		$akses = 'dokter';
+		$data = array(
+			'id_'.$akses => $id,
+			'password_'.$akses => $password
+			);
+		$this->load->model('m_main');
+		$result = $this->m_main->select_where($akses, $data);
+		if(!empty($result)){
+			$session = array(
+				'akses' => $akses,
+				'nama' => $result[0]['nama_dokter']
+			);
+			$this->session->set_userdata($session);
+			$this->load->view('dashboard/header', $session);
+			$this->load->view('dashboard', $session);
+			$this->load->view('dashboard/footer');
+		}
+		else redirect('index.php/welcome');
+	}
+	public function loginadmin()
+	{
+		# code...
+		$id = $this->input->post('id');
+		$password = md5($this->input->post('password'));
 		$akses = 'admin';
 		$data = array(
 			'id_'.$akses => $id,
@@ -44,10 +68,14 @@ class Welcome extends CI_Controller {
 		if(!empty($result)){
 			$session = array(
 				'akses' => $akses,
+				'nama' => $result[0]['nama_admin']
 			);
+			$this->session->set_userdata($session);
+			$this->load->view('dashboard/header', $session);
+			$this->load->view('dashboard', $session);
+			$this->load->view('dashboard/footer');
 		}
-		echo $session['akses'];
-
+		else redirect('index.php/welcome/admin');
 	}
 
 	public function dashboard()
@@ -58,4 +86,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('dashboard');
 		$this->load->view('dashboard/footer');
 	}
+	public function admin()
+	{
+		$data['title'] = 'REKAM MEDIS GIGI';
+		$this->load->view('indexadmin', $data);
+	}
+	public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('keterangan', 'telah logout');
+        redirect('index.php/welcome');
+    }
 }
