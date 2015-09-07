@@ -26,10 +26,18 @@ class Rekam extends CI_Controller {
 	}
 	public function index()
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		redirect(base_url()."index.php/pasien");
 	}
 	public function tambah($id_pasien)
 	{
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$data['id_rekam'] = $this->m_main->get_id('rekam_pasien', 'id_rekam');
 
@@ -53,6 +61,10 @@ class Rekam extends CI_Controller {
 
 	public function view_odontogram($id_rekam){
 		
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$data['lib_gigi'] = $this->m_main->getall('lib_gigi');
 		$data['title'] = 'Tambah Rekam Gigi';
@@ -69,6 +81,10 @@ class Rekam extends CI_Controller {
 	}
 
 	public function record($id_pasien){
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$data['title'] = "Rekam Pasien";
 		$this->load->model('m_main');
 		$data['rekam_pasien'] = $this->m_main->select_where('rekam_pasien', array('id_pasien' => $id_pasien));
@@ -88,6 +104,10 @@ class Rekam extends CI_Controller {
 	}
 
 	public function add_kondisi_gigi(){
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$gigi = $this->m_main->select_where('gigi', array('id_rekam' => $_POST['id_rekam']));
 		$detail_gigi = $_POST['ada_gigi'];
@@ -115,6 +135,10 @@ class Rekam extends CI_Controller {
 	}
 
 	public function simpan_rekaman_gigi(){
+        $session[] = $this->session->userdata('akses');
+		if (!empty($session) && $session == "") redirect('welcome/logout');
+        $data['akses'] = $session[0];
+        $data['nama'] = $this->session->userdata('nama');;
 		$this->load->model('m_main');
 		$gigi = $this->m_main->select_where('gigi', array('id_rekam' => $_POST['id_rekam']));
 		if (empty($gigi)){
