@@ -52,6 +52,7 @@
                                                     <td><?php echo $row['tanggal_rekam'];?></td>
                                                     <td>
                                                         <div class="btn btn-warning btn-sm detail_button" style="" data-toggle="modal" data-target="#detail_modal" id="detail_<?php echo $row['id_rekam']?>">Detail</div>
+                                                        <div class="btn btn-danger btn-sm hapus_button" style="" data-toggle="modal" data-target="#hapus_modal" id="hapus_<?php echo $row['id_rekam']?>">Hapus</div>
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -69,6 +70,7 @@
                 </div>
             </div>
             <!--END CONTENT-->
+            <!--DETAIL MODAL-->
             <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -87,6 +89,30 @@
                     </div>
                 </div>
             </div>
+            <!--END DETAIL MODAL-->
+            <!--HAPUS MODAL-->
+            <div id="hapus_modal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Hapus Rekam</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row" id="modal_content_hapus">
+                                <h2>
+                                    Apakah Anda ingin menghapus record ini?
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="modal_cancel">Tidak</button>
+                            <a type="button" class="btn btn-warning" id="modal_hapus">Iya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END HAPUS MODAL-->
             <script src="<?php echo base_url();?>assets/script/jquery-1.10.2.min.js"></script>
             <script type="text/javascript">
                 $(".detail_button").click(function(){
@@ -103,7 +129,13 @@
                         }
                     });
                 });
+                $(".hapus_button").click(function(){
+                    var rekam_id = $(this).attr("id");
+                    alert("haha");
+                    $("#modal_hapus").attr({
+                        href: "<?php echo base_url();?>index.php/rekam/hapus/"+rekam_id.substr(6,rekam_id.length),
+                    });
+                });
                 $("#modal_close").click(function(){
-                    $("#modal_content").html("Loading . . . ");
-                })
+                    $("#modal_content").html("Loading . . . ")});
             </script>

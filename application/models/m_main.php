@@ -28,4 +28,9 @@ class M_main extends CI_Model {
 		$hasil_query = $this->db->query("select * from $tablename ORDER BY $id_table DESC LIMIT 1");
 		return $hasil_query->result();
 	}
+
+	public function delete($tablename, $where){
+		$this->db->where($where);
+		$this->db->delete($tablename);
+	}
 }

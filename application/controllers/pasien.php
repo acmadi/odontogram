@@ -110,4 +110,12 @@ class Pasien extends CI_Controller {
 			redirect(base_url()."index.php/rekam/record/".$id_pasien);
 		}
 	}
+	public function hapus($id_pasien){
+		$this->load->model('m_main');
+		$rekam_gigi = $this->m_main->select_where('rekam_pasien', array('id_pasien' => $id_pasien));
+		foreach ($rekam_gigi as $key) {
+			$this->m_main->delete('gigi', array('id_rekam' => $key['id_rekam']));
+		}
+		redirect(base_url()."index.php/pasien");
+	}
 }

@@ -85,4 +85,10 @@ class Dokter extends CI_Controller {
 		$this->m_main->update('dokter',$data, $where);
 		$this->index();
 	}
+
+	public function hapus($id_dokter){
+		$this->load->model('m_main');
+		$this->m_main->delete('dokter', array('id_dokter' => $id_dokter));
+		redirect(base_url()."index.php/dokter");
+	}
 }

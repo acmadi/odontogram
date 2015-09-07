@@ -26,7 +26,7 @@
 		}
 		else{
 			?>
-			<h3> Data Tidak Ditemukan </h3>
+			<h3> Data Tidak Terisi </h3>
 			<?php
 		}
 		?>

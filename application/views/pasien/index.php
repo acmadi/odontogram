@@ -30,7 +30,7 @@
 
                             <div class="col-lg-12">
                             <div class="row">
-                    <div class="col-lg-8 col-md-offset-1">
+                    <div class="col-lg-10 col-md-offset-1">
                         <div class="panel panel-green">
                             <div class="panel-heading">Daftar Pasien</div>
                             <div class="panel-body">
@@ -53,7 +53,10 @@
                                         <td><?php echo $row->ktp_pasien;?></td>
                                         <td><?php echo $row->alamat_rumah_pasien;?></td>
                                         <td><?php echo $row->ponsel_pasien;?></td>
-                                        <td><a href="<?php echo base_url();?>index.php/rekam/record/<?php echo $row->id_pasien;?>" class="btn btn-sm btn-warning">Record</a></td>
+                                        <td>
+                                            <a href="<?php echo base_url();?>index.php/rekam/record/<?php echo $row->id_pasien;?>" class="btn btn-sm btn-warning">Record</a>
+                                            <a href="<?php echo base_url();?>index.php/pasien/hapus/<?php echo $row->id_pasien;?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     }

@@ -30,7 +30,7 @@
 
                             <div class="col-lg-12">
                             <div class="row">
-                    <div class="col-lg-8 col-md-offset-1">
+                    <div class="col-lg-10 col-md-offset-1">
                         <div class="panel panel-green">
                             <div class="panel-heading">Daftar Dokter</div>
                             <div class="panel-body">
@@ -51,7 +51,10 @@
                                         <td><?php echo $row->nama_dokter;?></td>
                                         <td><?php echo $row->alamat_praktik_dokter;?></td>
                                         <td><?php echo $row->telepon_dokter;?></td>
-                                        <td><a href="<?php echo base_url();?>index.php/dokter/ubah/<?php echo $row->id_dokter;?>" class="btn btn-sm btn-warning">Update</a></td>
+                                        <td>
+                                            <a href="<?php echo base_url();?>index.php/dokter/ubah/<?php echo $row->id_dokter;?>" class="btn btn-sm btn-warning">Update</a>
+                                            <a href="<?php echo base_url();?>index.php/dokter/hapus/<?php echo $row->id_dokter;?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     }
