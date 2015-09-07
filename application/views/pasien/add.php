@@ -170,21 +170,17 @@
                                                             <div class="col-md-4">
                                                                 Alergi Terhadap Obat-obatan
                                                             </div>
-                                                            <div class="col-md-8">
+                                                            <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        <div class="form-group">
-                                                                            <input id="inputAO" type="radio" class="form-control" value="N" name="AO"/> Tidak Ada</div>
-                                                                    </div>
-                                                                    <div class="col-md-3">
-                                                                        <div class="form-group">
-                                                                            <input id="inputAO" type="radio" class="form-control " value="Y" name="AO"/> Ada</div>
-                                                                    </div>
+                                                                    <select class="form-control" id="inputAO" name="inputAO" required>
+                                                                        <option value="none"> Tidak Ada </option>
+                                                                        <option value="ada"> Ada </option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                        <div class="form-group">
+                                                        <br>
+                                                        <div class="form-group" style="display: none" id="inputAOtextGroup">
                                                             <div class="input-icon right">
                                                                 <i class="fa fa-medkit"></i>
                                                                 <input id="inputAOtext" type="text" placeholder="Alergi terhadap Obat" class="form-control" name="AOtext"/></div>
@@ -194,25 +190,23 @@
                                                             <div class="col-md-4">
                                                                 Alergi Terhadap Makanan
                                                             </div>
-                                                            <div class="col-md-8">
+                                                            <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        <div class="form-group">
-                                                                            <input id="inputAM" type="radio" class="form-control" value="N" name="AM"/> Tidak Ada</div>
-                                                                    </div>
-                                                                    <div class="col-md-3">
-                                                                        <div class="form-group">
-                                                                            <input id="inputAM" type="radio" class="form-control " value="Y" name="AM"/> Ada</div>
-                                                                    </div>
+                                                                    <select class="form-control" id="inputAM" name="inputAM" required>
+                                                                        <option value="none"> Tidak Ada </option>
+                                                                        <option value="ada"> Ada </option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <br>
+                                                        <div class="form-group" style="display: none" id="inputAMtextGroup">
                                                             <div class="input-icon right">
                                                                 <i class="fa fa-tree"></i>
-                                                                <input id="inputAMtext" type="text" placeholder="Alergi Makanan" class="form-control" name="AMtext"/></div>
+                                                                <input id="inputAMtext" type="text" placeholder="Alergi terhadap Makanan" class="form-control" name="AMtext"/></div>
                                                         </div>
                                                     </div>
+
                                                     <div class="row" id="pasien_1">
                                                         <div class="form-group">
                                                             <div class="input-icon right">
@@ -324,5 +318,23 @@
                 $("#next").show();
                 $("#submit").hide();
                 $("#back").hide();
+            });
+            $("#inputAO").change(function(){
+                var option_value = $("#inputAO").val();
+                if (option_value == "ada"){
+                    $("#inputAOtextGroup").show();
+                }
+                else if (option_value == 'none'){
+                    $("#inputAOtextGroup").hide();
+                }
+            });
+            $("#inputAM").change(function(){
+                var option_value = $("#inputAM").val();
+                if (option_value == "ada"){
+                    $("#inputAMtextGroup").show();
+                }
+                else if (option_value == 'none'){
+                    $("#inputAMtextGroup").hide();
+                }
             });
             </script>

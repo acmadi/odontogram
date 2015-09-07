@@ -136,6 +136,7 @@
                                                                 <!-- End Odontogram -->
                                                             </div>
                                                         </div>
+                                                        <input type="hidden" id="id_pasien" name="id_pasien" value="<?php echo $id_pasien?>">
                                                         <div class="row" id="rekam_2" style="display: none">
                                                             <div class="form-group">
                                                                 <label for="oclusi">Oclusi</label>
