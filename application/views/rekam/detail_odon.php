@@ -4,6 +4,7 @@
     	<input type="text" hidden value="<?php echo $post['kode_gigi']?>" placeholder="" name="kode_gigi">
     	<input type="text" hidden value="<?php echo $post['id_rekam']?>" placeholder="" name="id_rekam">
     	<div class="form-group">
+    		<label for="ada_gigi">Ada Gigi</label>
 			<select class="form-control" id="ada_gigi" name="ada_gigi" required>
 				<option value="miss"> Missing </option>
 				<option value="ada"> Ada </option>

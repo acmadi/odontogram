@@ -165,6 +165,12 @@ class Rekam extends CI_Controller {
 			);
 			$this->m_main->update('gigi', $update_gigi, array('id_rekam' => $_POST['id_rekam']));
 		}
-		redirect(base_url()."index.php/rekam/tambah".$_POST['id_pasien']);
+		redirect(base_url()."index.php/rekam/record/".$_POST['id_pasien']);
+	}
+	public function hapus($id_rekam){
+		$this->load->model('m_main');
+		$this->m_main->delete('rekam_pasien', array('id_rekam' => $id_rekam));
+		$this->m_main->delete('gigi', array('id_rekam' => $id_rekam));
+		redirect(base_url()."index.php/pasien");
 	}
 }
